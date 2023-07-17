@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>RestAPIProject</groupId>
+  <artifactId>RestAPIProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/main/resources/schema</sourceDirectory>
+                    <targetPackage>com.shipapi.json</targetPackage>
+                    <sourceType>json</sourceType>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>rest-assured</artifactId>
+	    <version>4.3.0</version>
+	</dependency>
+ <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>json-path</artifactId>
+	    <version>4.3.3</version>
+	</dependency>
+<!-- https://mvnrepository.com/artifact/org.ccil.cowan.tagsoup/tagsoup -->
+	<dependency>
+	    <groupId>org.ccil.cowan.tagsoup</groupId>
+	    <artifactId>tagsoup</artifactId>
+	    <version>1.2.1</version>
+	</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
+	<dependency>
+	    <groupId>org.codehaus.groovy</groupId>
+	    <artifactId>groovy</artifactId>
+	    <version>3.0.18</version>
+	</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-xml -->
+	<dependency>
+	    <groupId>org.codehaus.groovy</groupId>
+	    <artifactId>groovy-xml</artifactId>
+	    <version>3.0.18</version>
+	</dependency>
+<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+	<dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest</artifactId>
+	    <version>2.1</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>com.fasterxml.jackson.core</groupId>
+	  <artifactId>jackson-databind</artifactId>
+	  <version>2.5.4</version>
+	</dependency>
+	<!-- Excel dependencies  -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>5.0.0</version>
+    </dependency>
+
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.0.0</version>
+	</dependency>
+	<!-- Extent Report -->
+	<dependency>
+	    <groupId>com.aventstack</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>5.0.7</version>
+    </dependency>
+</dependencies>
+</project>
